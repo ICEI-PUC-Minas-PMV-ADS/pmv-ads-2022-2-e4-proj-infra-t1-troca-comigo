@@ -108,3 +108,57 @@ Por isso, usamos a plataforma Teams para comunicação, apresentação e guardar
 
 O editor de código foi escolhido por ser gratuito, um dos mais populares para desenvolvimento front-end e possuir uma integração com o
 sistema de versão. 
+
+## Integração com ferramenta CI/CD
+
+Para integração das etapas de desenvolvimento da solução Web API, e também para uma otimização de tempo e organização, o GitLab será agregado ao projeto.
+
+![196049106-00baae15-7ae5-4e4f-a201-55a518eda6f2](https://user-images.githubusercontent.com/90798113/196051808-5c18aba8-042b-4488-977e-09b382b34ae4.png)
+
+
+O Gitlab é uma ferramenta que agrega diversas funcionalidades, mas, primordialmente, é um gerenciador de repositório baseado em Git, assim como o Github. Hoje em dia, além da funcionalidade citada, ele também conecta diversas ferramentas do mundo DevOps, assim como conceitos de CI/CD e até mesmo Kubernetes 
+
+Para facilitar esse processo, o GitLab CI/CD surge como ferramenta integrada ao GitLab onde é possível descrever todos os passos de integração e implantação contínua em um arquivo dentro do repositório. Este arquivo é o .gitlab-ci.yml.
+
+Trata-se de um arquivo no formato YAML onde são definidos estágios e tarefas para execução das etapas necessárias da integração e implantação contínua.
+
+A primeira parte a se pensar são os estágios (stages) das tarefas (jobs). Os estágios são grupos de tarefas e são executados sequencialmente. São grupos de ações que precisam ser executadas para executar as verificações de código e por fim, a implantação.
+![image](https://user-images.githubusercontent.com/90798113/196049040-2e7d7c78-cb3c-4c7e-8a3a-416d452e5211.png)
+ <sub> Fonte:https://blog.ateliedocodigo.com.br/do-zero-ao-primeiro-job-com-gitlab-ci-f9dcf6a183</sub> 
+
+
+Em suma, o  Gitlab é fácil escalar os runners, há uma execução paralela de tarefas em diferentes fases do pipeline, com o gitlab, você pode contratar todos os aspectos do trabalho com repositórios git, incluindo branches com códigos.
+
+
+#### Implementação e hospedagem do projeto
+
+- Para criar nosso repositório, na página inicial clicamos no ícones Novo Projeto.
+
+<img width="953" alt="image" src="https://user-images.githubusercontent.com/90798113/196050408-26db9afa-d59f-44d4-a968-f5614dd660ac.png">
+
+- Na próxima página, como o projeto já estava no repositório do git, clicamos na opção Import Project:
+
+<img width="958" alt="image" src="https://user-images.githubusercontent.com/90798113/196050377-bbd52b77-b449-4af4-9055-e4878561d4e9.png">
+
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/90798113/196050551-5a5b5775-d2ec-40b0-81e4-f9fc60b68172.png">
+
+- Com o projeto importado, a integração com o CI/CD pôde ser iniciado.
+
+<img width="932" alt="image" src="https://user-images.githubusercontent.com/90798113/196050074-c71b0c6c-f2f3-402a-9ef6-1e0ecc722dde.png">
+
+## Reversão
+Há maneiras de realizar reversão do que foi criado, sendo possível reverter commits pontuais ou até mesma a solução inteira. Para esse procedimento um novo commit é  gerado revertendo as ações realizadas no commit de origem.
+
+Para fazer isso:
+
+- Na barra superior á esquerda, clicar em Menu principal > Projetos e buscar pelo repositório.
+<img width="609" alt="image" src="https://user-images.githubusercontent.com/90798113/196049775-1359a576-cf57-4671-8214-86f47bcf382a.png">
+
+- Na barra lateral  á esquerda, selecione a aba Merge Requests e identifique sua solicitação de mesclagem.
+<img width="734" alt="image" src="https://user-images.githubusercontent.com/90798113/196049816-6618fd7d-2206-418f-bdd8-5229129782be.png">
+
+- Quando tiver um commit para reversão, ir até a área de relatórios de Merge Request e encontrar o commit de desejo.
+
+- Em Reverter na branch, selecione a branch que você deseja reverter suas alterações.
+- Selecionar Reverter.
+
